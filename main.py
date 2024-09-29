@@ -27,6 +27,8 @@ def main():
 
         if method == 'mean_variance':
             optimal_weights = optimize_mean_variance(log_returns, cov_matrix, risk_free_rate, tickers)
+        elif method == 'risk_parity':
+            optimal_weights = optimize_risk_parity(cov_matrix, tickers)
         else:
             raise ValueError(f"Unknown optimization method: {method}")
         
